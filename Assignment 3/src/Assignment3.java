@@ -33,14 +33,45 @@ public class Assignment3 {
 	
 	Scanner myScanner = new Scanner(System.in);
 	SecureRandom mySecureRandomgenerator = new SecureRandom();
-	int pick = 0;
+	int pick;
+	
 	int i;
-	for (i = 1; i<10; i++) //start at i is equal to 1 and run until i is equal to 10. Don't run a for loop with a double or float runs 9 times.
+	int x;
+	try{Thread.sleep(4000);}
+	catch (Exception e){};
+	System.out.println("Roll a 1, no points gained or lost. 2 gain 2 points. 3 lose 1 point. 4 roll gain 4 points. 5 your opponent gets 5 points. 6 get 6 points. First one to 10 points or over wins");
+	
+	for (i = 1; i<1000; i++) //start at i is equal to 1 and run until i is equal to 10. Don't run a for loop with a double or float runs 9 times.
 	{
-		System.out.println(i+" times through this loop");
-		pick = mySecureRandomgenerator.nextInt(5)+0; //set pick to 0 but we make it equal to any random number
-		System.out.println("a number between 0 and 6 is:"+pick); //random number generator is not random, just appears to be random.
-		myScanner.nextLine();
+		pick = mySecureRandomgenerator.nextInt(6)+1; //set pick to 0 but we make it equal to any random number
+		try{Thread.sleep(1500);}
+		catch (Exception e){};
+		System.out.println(i+" rolls used");
+		try{Thread.sleep(1500);}
+		catch (Exception e){};
+		System.out.println("The number rolled is "+pick); //random number generator is not random, just appears to be random.
+		// from www.stackoverflow.com
+		String str=Integer.toString(pick);
+		str = myScanner.nextLine();
+		try{Thread.sleep(3000);}
+		catch (Exception e){};
+		if (pick==1) //double equal signs for test
+			System.out.println("Nothing");
+		else
+			if(pick==2)
+		System.out.println("Gain 2 points");
+		else
+			if(pick==3)
+				System.out.println("Lose 1 Point");
+			else 
+				if(pick==4)
+					System.out.println("Gain 4 Points");
+				else 
+					if(pick==5)
+						System.out.println("Your opponent gains 2 points");
+					else 
+						if(pick==6)
+							System.out.println("Gain 6 Points");
 	}
 	myScanner.close();
 	return;
