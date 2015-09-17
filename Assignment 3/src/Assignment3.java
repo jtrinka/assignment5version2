@@ -4,32 +4,14 @@ import java.util.Scanner;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 public class Assignment3 {
 //
 	
 	//
-	public void paintComponent(Graphics g)
-	{
-		super.paintComponent(g);
-		
-		for(int i = 0; i < 10; i++)
-			{
-			g.drawRect(10 + i *10, 10+i *10, 50+i * 10, 50+i * 10);
-			g.drawOval(240+i * 10, 10 + i * 10, 50 + i * 10, 50 + i * 10);
-			
-			}
-		
-	}
+	
 	public static void main(String[] args) {
-		
-		Shapes panel = new Shapes();
-		JFrame application = new JFrame();
-		
-		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		application.add(panel);
-		application.setSize(500,  290);
-		application.setVisible(true);
-		
 		
 		Scanner input = new Scanner(System.in);
 		int count=1;
@@ -56,7 +38,6 @@ public class Assignment3 {
 	}
 		
 	
-	Scanner myScanner = new Scanner(System.in);
 	SecureRandom mySecureRandomgenerator = new SecureRandom();
 	int pick;
 	
@@ -64,7 +45,7 @@ public class Assignment3 {
 	int x;
 	try{Thread.sleep(4000);}
 	catch (Exception e){};
-	System.out.println("Roll a 1, no points gained or lost. 2 gain 2 points. 3 lose 1 point. 4 roll gain 4 points. 5 your opponent gets 5 points. 6 get 6 points. First one to 10 points or over wins");
+	System.out.println("Roll a 1, no points gained or lost. 2 gain 2 points. 3 lose 1 point. 4 gain 4 points. 5 your opponent gets 5 points. 6 get 6 points. First one to 10 points or over wins");
 	
 	for (i = 1; i<2; i++) //start at i is equal to 1 and run until i is equal to 10. Don't run a for loop with a double or float runs 9 times.
 	{
@@ -77,7 +58,7 @@ public class Assignment3 {
 		System.out.println("The number rolled is "+pick); //random number generator is not random, just appears to be random.
 		// from www.stackoverflow.com
 		String str=Integer.toString(pick);
-		str = myScanner.nextLine();
+		str = input.nextLine();
 		try{Thread.sleep(3000);}
 		catch (Exception e){};
 		if (pick==1) //double equal signs for test
@@ -97,34 +78,51 @@ public class Assignment3 {
 					else 
 						if(pick==6)
 							System.out.println("Gain 6 Points");
+	
 	}
-	myScanner.close();
+	try{Thread.sleep(1500);}
+	catch (Exception e){};
 	//weblogs.java.net
 	Random rand = new Random();
-    int z = rand.nextInt(50);
-    int y = rand.nextInt(50);
+    int z = rand.nextInt(6);
+    int y = rand.nextInt(6);
     System.out.println("(z > 5) && (y > 5) is " + ((z > 5) && (y > 5)) );
     System.out.println("(z < 5) || (y < 5) is " +  ((z < 5) || (y < 5)) );
     
-    // Best for 1 variable
-    //int a=0;
-	//switch( a ) {
-    //case 1: System.out.print("\nNow I'll print one");
-    //System.out.println("-and that is a good choice");
-    //break causes it to jump out of block
-    //case 2-5: System.out.println("\nTwo");
-    //break;
-    //default: System.out.println("\neither one or two");
-    //break;
-	//}
-    
- 
+    try{Thread.sleep(1500);}
+	catch (Exception e){};
+    //Best for 1 variable
+    System.out.println("Type a number between 1 and 3:"); // this uses a string
+    String a = input.next(); // so this has to be a string
+	switch( a ) {
+    case "1": System.out.println("I'll print one"); // case if a=1 then print this
+    break;
+    case "2": System.out.println("print 2");
+    break;
+    default: System.out.println("neither one or two");
+    break;
+   
+	}
+	//www.herongyang.com
+	try{Thread.sleep(1500);}
+	catch (Exception e){};
+	MyJFrame f = new MyJFrame();
+    f.setTitle("Drawing Graphics in Frames");
+    f.setBounds(0,0,300,300);
+    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    f.setVisible(true);
+ }
+ static class MyJFrame extends JFrame {
+    public void paint(Graphics g) {
+       g.drawOval(135,165,135,165);
+       g.drawRect(0, 0, 100, 100);
+    }
     
 	
-	return;
+
 	
 	
 }
-	
+	 
 
 }
