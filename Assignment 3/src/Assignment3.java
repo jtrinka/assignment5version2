@@ -92,17 +92,37 @@ public class Assignment3 {
     try{Thread.sleep(1500);}
 	catch (Exception e){};
     //Best for 1 variable
-    System.out.println("Type a number between 1 and 3:"); // this uses a string
+    System.out.println("Do you like Computer Science? If yes type 1, if no type 2:"); // this uses a string
     String a = input.next(); // so this has to be a string
 	switch( a ) {
-    case "1": System.out.println("I'll print one"); // case if a=1 then print this
+    case "1": System.out.println("Good, computer science has lots of opportunities. I enjoy it too."); // case if a=1 then print this
     break;
-    case "2": System.out.println("print 2");
+    case "2": System.out.println("Time to find a new major or minor I suppose");
     break;
-    default: System.out.println("neither one or two");
+    default: System.out.println("Invalid entry");
     break;
    
 	}
+	 try{Thread.sleep(1500);}
+		catch (Exception e){};
+	String r;
+	String password = "carrollcollege";
+	String input2;
+	//input2=input.next();//System.in.toString();
+	
+	boolean check = true;
+	
+	do { //do while loop. Test is at the bottom of the loop. Need test condition at end of the loop. Test and see if we want to repeat the loop. Good for passwords, test and test again if they got it right.
+		System.out.println("What is the password?");
+		input2 = input.next();
+		if (input2.equals(password))
+		{check = false;}
+		count = count + 1;
+		//break;
+	} while(check);
+	
+	try{Thread.sleep(1500);}
+	catch (Exception e){};
 	//www.herongyang.com
 	try{Thread.sleep(1500);}
 	catch (Exception e){};
@@ -117,6 +137,7 @@ public class Assignment3 {
        g.drawOval(135,165,135,165);
        g.drawRect(0, 0, 100, 100);
     }
+ 
     
 	
 
